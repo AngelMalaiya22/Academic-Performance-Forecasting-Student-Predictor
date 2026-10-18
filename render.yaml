@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: student-success-predictor
+    runtime: python
+    plan: free
+    region: singapore          # pick the region closest to your users
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3

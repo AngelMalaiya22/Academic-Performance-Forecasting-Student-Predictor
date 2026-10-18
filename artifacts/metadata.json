@@ -1,0 +1,304 @@
+{
+  "features": {
+    "A_midterm": [
+      "school",
+      "sex",
+      "age",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Medu",
+      "Fedu",
+      "Mjob",
+      "Fjob",
+      "reason",
+      "guardian",
+      "traveltime",
+      "studytime",
+      "failures",
+      "schoolsup",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet",
+      "romantic",
+      "famrel",
+      "freetime",
+      "goout",
+      "Dalc",
+      "Walc",
+      "health",
+      "parent_edu",
+      "alc_total",
+      "log_absences",
+      "G1",
+      "G2",
+      "grade_trend",
+      "grade_mean"
+    ],
+    "B_early": [
+      "school",
+      "sex",
+      "age",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Medu",
+      "Fedu",
+      "Mjob",
+      "Fjob",
+      "reason",
+      "guardian",
+      "traveltime",
+      "studytime",
+      "failures",
+      "schoolsup",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet",
+      "romantic",
+      "famrel",
+      "freetime",
+      "goout",
+      "Dalc",
+      "Walc",
+      "health",
+      "parent_edu",
+      "alc_total",
+      "log_absences"
+    ]
+  },
+  "raw_inputs": [
+    "school",
+    "sex",
+    "age",
+    "address",
+    "famsize",
+    "Pstatus",
+    "Medu",
+    "Fedu",
+    "Mjob",
+    "Fjob",
+    "reason",
+    "guardian",
+    "traveltime",
+    "studytime",
+    "failures",
+    "schoolsup",
+    "famsup",
+    "paid",
+    "activities",
+    "nursery",
+    "higher",
+    "internet",
+    "romantic",
+    "famrel",
+    "freetime",
+    "goout",
+    "Dalc",
+    "Walc",
+    "health",
+    "absences",
+    "G1",
+    "G2"
+  ],
+  "thresholds": {
+    "A_midterm": 0.23,
+    "B_early": 0.45
+  },
+  "categorical_options": {
+    "school": [
+      "GP",
+      "MS"
+    ],
+    "sex": [
+      "F",
+      "M"
+    ],
+    "address": [
+      "R",
+      "U"
+    ],
+    "famsize": [
+      "GT3",
+      "LE3"
+    ],
+    "Pstatus": [
+      "A",
+      "T"
+    ],
+    "Mjob": [
+      "at_home",
+      "health",
+      "other",
+      "services",
+      "teacher"
+    ],
+    "Fjob": [
+      "at_home",
+      "health",
+      "other",
+      "services",
+      "teacher"
+    ],
+    "reason": [
+      "course",
+      "home",
+      "other",
+      "reputation"
+    ],
+    "guardian": [
+      "father",
+      "mother",
+      "other"
+    ],
+    "schoolsup": [
+      "no",
+      "yes"
+    ],
+    "famsup": [
+      "no",
+      "yes"
+    ],
+    "paid": [
+      "no",
+      "yes"
+    ],
+    "activities": [
+      "no",
+      "yes"
+    ],
+    "nursery": [
+      "no",
+      "yes"
+    ],
+    "higher": [
+      "no",
+      "yes"
+    ],
+    "internet": [
+      "no",
+      "yes"
+    ],
+    "romantic": [
+      "no",
+      "yes"
+    ]
+  },
+  "numeric_ranges": {
+    "age": [
+      15,
+      22,
+      17
+    ],
+    "Medu": [
+      0,
+      4,
+      3
+    ],
+    "Fedu": [
+      0,
+      4,
+      2
+    ],
+    "traveltime": [
+      1,
+      4,
+      1
+    ],
+    "studytime": [
+      1,
+      4,
+      2
+    ],
+    "failures": [
+      0,
+      3,
+      0
+    ],
+    "famrel": [
+      1,
+      5,
+      4
+    ],
+    "freetime": [
+      1,
+      5,
+      3
+    ],
+    "goout": [
+      1,
+      5,
+      3
+    ],
+    "Dalc": [
+      1,
+      5,
+      1
+    ],
+    "Walc": [
+      1,
+      5,
+      2
+    ],
+    "health": [
+      1,
+      5,
+      4
+    ],
+    "absences": [
+      0,
+      75,
+      4
+    ],
+    "G1": [
+      3,
+      19,
+      11
+    ],
+    "G2": [
+      0,
+      19,
+      11
+    ]
+  },
+  "models": {
+    "reg_midterm": "Gradient Boosting",
+    "reg_early": "XGBoost",
+    "clf_midterm": "Logistic Regression",
+    "clf_early": "Gradient Boosting"
+  },
+  "test_metrics": {
+    "A_midterm": {
+      "best regressor": "Gradient Boosting",
+      "RMSE": 1.3258,
+      "MAE": 0.8345,
+      "R2": 0.917,
+      "baseline RMSE (mean)": 4.6014,
+      "best classifier": "Logistic Regression",
+      "threshold": 0.23,
+      "Recall(at-risk)": 1.0,
+      "Precision": 0.7027,
+      "F1": 0.8254,
+      "ROC-AUC": 0.9768
+    },
+    "B_early": {
+      "best regressor": "XGBoost",
+      "RMSE": 3.9485,
+      "MAE": 2.9625,
+      "R2": 0.2635,
+      "baseline RMSE (mean)": 4.6014,
+      "best classifier": "Gradient Boosting",
+      "threshold": 0.45,
+      "Recall(at-risk)": 0.5,
+      "Precision": 0.65,
+      "F1": 0.5652,
+      "ROC-AUC": 0.7308
+    }
+  }
+}
